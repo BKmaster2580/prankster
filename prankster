@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Author: Alex Fang
+# Location: /usr/bin
+# Requirements: espeak T2S synthesizer
+
+espeak "YOUR COMPUTER IS ABOUT TO EXPLODE!"
+
+for i in `seq 0 90`;
+do
+        espeak -p $i "oi" &
+        sleep 0.05
+done
+
+for i in `seq 20 90`;
+do
+        espeak -p $i "en a" &
+        sleep 0.05
+done
+
+espeak "self explosion finished."
+espeak "initializing destruction"
+
+while [ true ] ; do
+        espeak -p $RANDOM "apocalypse warning" &
+        sleep 1
+done
